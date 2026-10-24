@@ -1,0 +1,196 @@
+/* Variables globales */
+:root {
+  font-family: system-ui, sans-serif;
+  color: #1f2937;
+  background: #a9c0ee;
+
+  --color-primary:black ;
+  --color-surface: #912614;
+  --color-border: #fc98b0;
+  --radius: 0.75rem;
+  --gap: 1rem;
+  --page-padding: clamp(1rem, 3vw, 2rem);
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+/* Holy Grail Layout */
+.layout {
+  display: grid;
+  grid-template-columns:
+    minmax(180px, 220px)
+    minmax(0, 1fr)
+    minmax(180px, 240px);
+
+  grid-template-rows: auto auto minmax(60vh, 1fr) auto;
+
+  grid-template-areas:
+    "header  header  header"
+    "nav     nav     nav"
+    "left    main    right"
+    "footer  footer  footer";
+
+  gap: var(--gap);
+  min-height: 100vh;
+  padding: var(--page-padding);
+  max-width: 1600px;
+  margin-inline: auto;
+}
+
+/* Regiones */
+.header {
+  grid-area: header;
+  background: var(--color-primary);
+  color: white;
+  text-align: center;
+}
+
+.nav {
+  grid-area: nav;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: var(--color-surface);
+  
+ 
+}
+
+.sidebar-left {
+  grid-area: left;
+  height: 300px;
+ 
+
+}
+
+.main {
+  grid-area: main;
+  min-width: 0;
+  height: 695px;
+}
+
+.sidebar-right {
+  grid-area: right;
+  text-align: justify;
+}
+
+.footer {
+  grid-area: footer;
+  background: #111827;
+  color: white;
+}
+
+/* Estilos compartidos */
+.header,
+.nav,
+.sidebar,
+.main,
+.footer {
+  padding: 1.5rem;
+  border-radius: var(--radius);
+}
+
+.nav,
+.sidebar,
+.main {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.sidebar ul {
+  padding-left: 1.25rem;
+}
+
+.sidebar li + li {
+  margin-top: 0.75rem;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+.footer p {
+  margin-bottom: 0;
+}
+
+/* Tablet y móvil */
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    grid-template-rows: auto auto auto auto auto;
+
+    grid-template-areas:
+      "header header"
+      "nav    nav"
+      "main   main"
+      "left   right"
+      "footer footer";
+  }
+}
+
+@media (max-width: 520px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+
+    grid-template-rows: auto;
+
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "left"
+      "right"
+      "footer";
+  }
+
+  .header,
+  .nav,
+  .sidebar,
+  .main,
+  .footer {
+    padding: 1rem;
+  }
+
+  .nav {
+    gap: 1rem;
+  }
+}
+
+
+.imagenes{
+  height: 200px;
+  width: 100%;
+  
+}
+
+.texto{
+
+  text-align: center;
+}
+
+.t{
+font-family:cursive;
+ font-size:larger;
+color:white;
+text-align: center;
+
+}
