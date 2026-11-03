@@ -1,0 +1,63 @@
+
+        
+        :root {
+
+            --color-texto: white;
+            --color-border:#f74fd0;
+            --background-color: white;
+        
+        }
+ /*   @media(prefers-color-scheme: dark){
+:root{
+       background-color: #1a1a1a;
+
+    }
+}
+
+body {
+    background-color: var(--background-color);
+  
+}
+    No me salió poner el cambio de blanco y negro
+    */
+        .catalogo{
+            width: 90%;
+            margin: 0 auto;
+            display: grid;
+        
+            grid-template-columns: repeat(6, minmax(100px, 1fr));
+        }
+
+        .tarjeta {
+            width: 200px;
+            height: 200px;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 2px solid var(--color-border);
+            box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            border-radius: 10%;
+            flex-direction: column;
+            justify-items: center;
+            align-items: center;
+           background-color: black;
+            color: var(--color-texto);
+
+           
+        }
+
+        .catalogo :hover{
+            background-color: var(--background-color);
+            color: black;
+            transition: background-color 0.5s;
+            border: 3px solid #fa5f49;
+        
+        }
+
+        .tarjeta img{
+            width: 120px;
+            height: 150px;
+        }
+
+
+
